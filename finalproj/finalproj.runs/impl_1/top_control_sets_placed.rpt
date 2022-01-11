@@ -1,0 +1,101 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Wed Dec  8 18:18:07 2021
+| Host         : WM106-ST07 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    23 |
+|    Minimum number of control sets                        |    23 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    86 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    23 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     2 |
+| >= 16              |     9 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              33 |           13 |
+| No           | No                    | Yes                    |               1 |            1 |
+| No           | Yes                   | No                     |             139 |           34 |
+| Yes          | No                    | No                     |              25 |           11 |
+| Yes          | No                    | Yes                    |             253 |           55 |
+| Yes          | Yes                   | No                     |             119 |           33 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                   Enable Signal                   |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | d5/btn_deb                                        |                                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | d5/btn_samp                                       |                                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | nolabel_line70/lcd1/lcd_enable_i_1_n_0            | sw_IBUF[0]                       |                1 |              1 |         1.00 |
+|  d1/E[0]       |                                                   |                                  |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | nolabel_line70/pending_state[3]_i_1_n_0           | sw_IBUF[0]                       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | nolabel_line70/lcd1/E[0]                          | sw_IBUF[0]                       |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG | nolabel_line70/address[7]_i_1_n_0                 | sw_IBUF[0]                       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | count_enable                                      | count[7]_i_1_n_0                 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | nolabel_line30/u2/FSM_onehot_current_state_reg[9] | player_score[7]_i_1_n_0          |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | nolabel_line32/delay[15]_i_1_n_0                  |                                  |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG | nolabel_line70/lcd1/lcd_regsel0                   | sw_IBUF[0]                       |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG | d5/E[0]                                           | sw_IBUF[0]                       |                4 |             11 |         2.75 |
+|  clk_IBUF_BUFG | nolabel_line76/loadvalue                          |                                  |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG |                                                   | nolabel_line32/delay[15]_i_1_n_0 |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG |                                                   | nolabel_line80/clear             |                5 |             19 |         3.80 |
+|  clk_IBUF_BUFG | nolabel_line70/lcd1/p_0_in                        | sw_IBUF[0]                       |                5 |             19 |         3.80 |
+|  clk_IBUF_BUFG | nolabel_line30/u2/FSM_onehot_current_state_reg[5] | sw_IBUF[0]                       |                7 |             28 |         4.00 |
+|  clk_IBUF_BUFG |                                                   |                                  |               12 |             31 |         2.58 |
+|  clk_IBUF_BUFG | d5/FSM_onehot_current_state_reg[2][0]             | sw_IBUF[0]                       |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | nolabel_line30/u1/E[0]                            | sw_IBUF[0]                       |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | nolabel_line70/line1[126]_i_1_n_0                 | sw_IBUF[0]                       |               16 |             98 |         6.12 |
+|  clk_IBUF_BUFG |                                                   | sw_IBUF[0]                       |               26 |            106 |         4.08 |
+|  clk_IBUF_BUFG | nolabel_line70/line2[126]_i_1_n_0                 | sw_IBUF[0]                       |               22 |            110 |         5.00 |
++----------------+---------------------------------------------------+----------------------------------+------------------+----------------+--------------+
+
+
